@@ -7,5 +7,5 @@
 🔧 Installation & Usage
 1. git clone https://github.com/Neysho/AmenBank.git
 2. composer install
-3. composer update (mendatory)
+3. composer update (mandatory)
 4. type  php bin/console server:run 
