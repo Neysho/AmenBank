@@ -25,10 +25,10 @@ function calculateMonthlyPayement() {
 
 function showOverview() {
     document.getElementById('overview').innerHTML = `
-    <p class="m-0">montly payment : ${monthlyPayement.toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</p>
-    <p class="m-0">Yearly payement : ${(monthlyPayement * 12).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</p>
-    <p class="m-0">Total paid : ${(monthlyPayement * months).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</p>
-    <p class="m-0">Total Intrest paid : ${((monthlyPayement * months) - amount).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</p>
+    <p class="m-0">montly payment : ${monthlyPayement.toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</p>
+    <p class="m-0">Yearly payement : ${(monthlyPayement * 12).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</p>
+    <p class="m-0">Total paid : ${(monthlyPayement * months).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</p>
+    <p class="m-0">Total Intrest paid : ${((monthlyPayement * months) - amount).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</p>
     `;
 }
 
@@ -55,9 +55,9 @@ function getDetails() {
         <tr>
             <td>${counter++}</td>
             <td>${displayDate}</td>
-            <td>${(monthlyPayement - monthlyIntrest).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</td>
-            <td>${monthlyIntrest.toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</td>
-            <td>${capital.toLocaleString('be',{minimumFractionDigits: 2,maximumFractionDigits: 2})} €</td>
+            <td>${(monthlyPayement - monthlyIntrest).toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</td>
+            <td>${monthlyIntrest.toLocaleString('fr',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</td>
+            <td>${capital.toLocaleString('be',{minimumFractionDigits: 2,maximumFractionDigits: 2})} TND</td>
         </tr>
     `;
     }
