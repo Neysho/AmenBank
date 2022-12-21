@@ -1,0 +1,458 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Amen Bank</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front/images/favicon.png')}}">
+    <!-- Pignose Calender -->
+    <link href="{{ asset('front/plugins/pg-calendar/css/pignose.calendar.min.css')}}" rel="stylesheet">
+    <!-- Chartist -->
+    <link rel="stylesheet" href="{{ asset('front/plugins/chartist/css/chartist.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('front/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css')}}">
+    <!-- Custom Stylesheet -->
+    <link href="{{ asset('front/css/style.css')}}" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
+
+
+</head>
+
+<body>
+
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </svg>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
+
+
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+
+    <!--**********************************
+        Nav header start
+    ***********************************-->
+    <div class="nav-header">
+        <div class="brand-logo">
+            <a href="{{ path('') }}">
+                <b class="logo-abbr"><img src="{{ asset('front/images/amen.png')}}" alt=""> </b>
+
+                <span class="brand-title">
+                        <img src="{{ asset('front/images/amen-text.png')}}" alt="">
+                    </span>
+            </a>
+        </div>
+    </div>
+    <!--**********************************
+        Nav header end
+    ***********************************-->
+
+    <!--**********************************
+        Header start
+    ***********************************-->
+    <div class="header">
+        <div class="header-content clearfix">
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="toggle-icon"><i class="icon-menu"></i></span>
+                </div>
+            </div>
+            <div class="header-left">
+                <div class="input-group icons">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                    </div>
+                    <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
+                    <div class="drop-down animated flipInX d-md-none">
+                        <form action="#">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <ul class="clearfix">
+                    <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                            <i class="mdi mdi-email-outline"></i>
+                            <span class="badge badge-pill gradient-1">3</span>
+                        </a>
+                        <div class="drop-down animated fadeIn dropdown-menu">
+                            <div class="dropdown-content-heading d-flex justify-content-between">
+                                <span class="">3 New Messages</span>
+                                <a href="javascript:void()" class="d-inline-block">
+                                    <span class="badge badge-pill gradient-1">3</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li class="notification-unread">
+                                        <a href="javascript:void()">
+                                            <img class="float-left mr-3 avatar-img" src="images/avatar/1.jpg" alt="">
+                                            <div class="notification-content">
+                                                <div class="notification-heading">Saiful Islam</div>
+                                                <div class="notification-timestamp">08 Hours ago</div>
+                                                <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="notification-unread">
+                                        <a href="javascript:void()">
+                                            <img class="float-left mr-3 avatar-img" src="images/avatar/2.jpg" alt="">
+                                            <div class="notification-content">
+                                                <div class="notification-heading">Adam Smith</div>
+                                                <div class="notification-timestamp">08 Hours ago</div>
+                                                <div class="notification-text">Can you do me a favour?</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <img class="float-left mr-3 avatar-img" src="images/avatar/3.jpg" alt="">
+                                            <div class="notification-content">
+                                                <div class="notification-heading">Barak Obama</div>
+                                                <div class="notification-timestamp">08 Hours ago</div>
+                                                <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <img class="float-left mr-3 avatar-img" src="images/avatar/4.jpg" alt="">
+                                            <div class="notification-content">
+                                                <div class="notification-heading">Hilari Clinton</div>
+                                                <div class="notification-timestamp">08 Hours ago</div>
+                                                <div class="notification-text">Hello</div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
+                            <i class="mdi mdi-bell-outline"></i>
+                            <span class="badge badge-pill gradient-2">3</span>
+                        </a>
+                        <div class="drop-down animated fadeIn dropdown-menu dropdown-notfication">
+                            <div class="dropdown-content-heading d-flex justify-content-between">
+                                <span class="">2 New Notifications</span>
+                                <a href="javascript:void()" class="d-inline-block">
+                                    <span class="badge badge-pill gradient-2">5</span>
+                                </a>
+                            </div>
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                            <div class="notification-content">
+                                                <h6 class="notification-heading">Events near you</h6>
+                                                <span class="notification-text">Within next 5 days</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                            <div class="notification-content">
+                                                <h6 class="notification-heading">Event Started</h6>
+                                                <span class="notification-text">One hour ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <span class="mr-3 avatar-icon bg-success-lighten-2"><i class="icon-present"></i></span>
+                                            <div class="notification-content">
+                                                <h6 class="notification-heading">Event Ended Successfully</h6>
+                                                <span class="notification-text">One hour ago</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <span class="mr-3 avatar-icon bg-danger-lighten-2"><i class="icon-present"></i></span>
+                                            <div class="notification-content">
+                                                <h6 class="notification-heading">Events to Join</h6>
+                                                <span class="notification-text">After two days</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="icons dropdown d-none d-md-flex">
+                        <a href="javascript:void(0)" class="log-user"  data-toggle="dropdown">
+                            <span>English</span>  <i class="fa fa-angle-down f-s-14" aria-hidden="true"></i>
+                        </a>
+                        <div class="drop-down dropdown-language animated fadeIn  dropdown-menu">
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li><a href="javascript:void()">English</a></li>
+                                    <li><a href="javascript:void()">Francais</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="icons dropdown">
+                        <div class="user-img c-pointer position-relative"   data-toggle="dropdown">
+                            <span class="activity active"></span>
+                            <img src="{{'/uploads/' ~ app.user.image }}" height="40" width="40" alt="">
+                        </div>
+                        <div class="drop-down dropdown-profile animated fadeIn dropdown-menu">
+                            <div class="dropdown-content-body">
+                                <ul>
+                                    <li>
+                                        <a href="app-profile.html"><i class="icon-user"></i> <span>Profile</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void()">
+                                            <i class="icon-envelope-open"></i> <span>Inbox</span> <div class="badge gradient-3 badge-pill gradient-1">3</div>
+                                        </a>
+                                    </li>
+
+                                    <hr class="my-2">
+                                    <li>
+                                        <a href="{{ path('app_2fa_enable') }}"><i class="icon-lock"></i> <span>Enable 2FA</span></a>
+                                    </li>
+                                    <li><a href="{{ path('app_logout') }}"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+        Header end ti-comment-alt
+    ***********************************-->
+
+    <!--**********************************
+        Sidebar start
+    ***********************************-->
+    <div class="nk-sidebar">
+        <div class="nk-nav-scroll">
+            <ul class="metismenu" id="menu">
+                <li class="mega-menu mega-menu-sm">
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="nav-icon fas fa-users"></i><span class="nav-text">Comptes Bancaire</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ path('my_accounts_list') }}">Mes Comptes</a></li>
+                        <li><a href="./layout-one-column.html">Movements</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="nav-icon fas fa-exchange-alt"></i><span class="nav-text">Virement</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ path('create_virement') }}">Demande de Virement</a></li>
+                        <li><a href="{{ path('mes_virements_list') }}">Historique</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="nav-icon fas fa-edit"></i><span class="nav-text">Credit</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="{{ path('create_credit') }}" aria-expanded="false">Demande de Credit</a></li>
+                        <li><a href="{{ path('mes_demande_credit') }}" aria-expanded="false">Historique</a></li>
+                        <li><a href="{{ path('credit_simulator_front') }}" aria-expanded="false">Simulation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <i class="icon-notebook menu-icon"></i><span class="nav-text">Autres</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        {#                        <li><a href="">Test</a></li>#}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--**********************************
+        Sidebar end
+    ***********************************-->
+
+    <!--**********************************
+        Content body start
+    ***********************************-->
+    <div class="content-body">
+        <div class="wrapper">
+
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Demande de Credit</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">General</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            {{ form_start(CreateForm_Credit)}}
+                            <div class="card-body">
+                                {#                            <div class="form-group">#}
+                                {#                                <label for="inputName"> Compte à débiter</label>#}
+                                {#                                {{ form_widget(CreateForm_Credit.Account) }}#}
+                                {#                            </div>#}
+                                <div class="form-group">
+                                    <label for="exampleInputFile">CIN</label>
+                                    {{ form_widget(CreateForm_Credit.c_cin ) }}
+                                    {{ form_errors(CreateForm_Credit.c_cin) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputClientCompany">Attestation Travail</label>
+                                    {{ form_widget(CreateForm_Credit.Attestation_Travail ) }}
+                                    {{ form_errors(CreateForm_Credit.Attestation_Travail) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputClientCompany">Attestation Salaire</label>
+                                    {{ form_widget(CreateForm_Credit.Attestation_Salaire ) }}
+                                    {{ form_errors(CreateForm_Credit.Attestation_Salaire) }}
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputClientCompany">Document de Credit</label>
+                                    {{ form_widget(CreateForm_Credit.Document_Credit ) }}
+                                    {{ form_errors(CreateForm_Credit.Document_Credit) }}
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="{{ path('credit_list') }}" class="btn btn-secondary">Cancel</a>
+                        <button type="submit" class="btn btn-success float-lg-none" >Create</button>
+                        {{ form_end(CreateForm_Credit) }}
+                    </div>
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+
+        <!-- ./wrapper -->
+
+        <!-- jQuery -->
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="{{ asset('dist/js/demo.js') }}"></script>
+        <script src="{{ asset('plugins/jsgrid/jsgrid.min.js') }}"></script>
+
+
+        <!-- Ask for delete (yes or no) -->
+        <script>
+            function myFunction() {
+                var r = confirm("OK to delete?");
+                if (r == false) {
+                    return false;
+                }
+
+            }
+        </script>
+
+        <!-- #/ container -->
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
+
+
+    <!--**********************************
+        Footer start
+    ***********************************-->
+    <!--**********************************
+        Footer end
+    ***********************************-->
+</div>
+<!--**********************************
+    Main wrapper end
+***********************************-->
+
+<!--**********************************
+    Scripts
+***********************************-->
+<script src="{{ asset('front/plugins/common/common.min.js')}}"></script>
+<script src="{{ asset('front/js/custom.min.js')}}"></script>
+<script src="{{ asset('front/js/settings.js')}}"></script>
+<script src="{{ asset('front/js/gleek.js')}}"></script>
+<script src="{{ asset('front/js/styleSwitcher.js')}}"></script>
+
+<!-- Chartjs -->
+<script src="{{ asset('front/plugins/chart.js/Chart.bundle.min.js')}}"></script>
+<!-- Circle progress -->
+<script src="{{ asset('front/plugins/circle-progress/circle-progress.min.js')}}"></script>
+<!-- Datamap -->
+<script src="{{ asset('front/plugins/d3v3/index.js')}}"></script>
+<script src="{{ asset('front/plugins/topojson/topojson.min.js')}}"></script>
+<script src="{{ asset('front/plugins/datamaps/datamaps.world.min.js')}}"></script>
+<!-- Morrisjs -->
+<script src="{{ asset('front/plugins/raphael/raphael.min.js')}}"></script>
+<script src="{{ asset('front/plugins/morris/morris.min.js')}}"></script>
+<!-- Pignose Calender -->
+<script src="{{ asset('front/plugins/moment/moment.min.js')}}"></script>
+<script src="{{ asset('front/plugins/pg-calendar/js/pignose.calendar.min.js')}}"></script>
+<!-- ChartistJS -->
+<script src="{{ asset('front/plugins/chartist/js/chartist.min.js')}}"></script>
+<script src="{{ asset('front/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js')}}"></script>
+
+
+
+<script src="{{ asset('front/js/dashboard/dashboard-1.js')}}"></script>
+
+</body>
+
+</html>
+

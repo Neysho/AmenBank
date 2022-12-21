@@ -1,0 +1,16 @@
+# See the configuration reference at https://symfony.com/bundles/SchebTwoFactorBundle/5.x/configuration.html
+scheb_two_factor:
+    security_tokens:
+#        - Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken
+        # If you're using guard-based authentication, you have to use this one:
+         - Symfony\Component\Security\Guard\Token\PostAuthenticationGuardToken
+        # If you're using authenticator-based security (introduced in Symfony 5.1), you have to use this one:
+        # - Symfony\Component\Security\Http\Authenticator\Token\PostAuthenticationToken
+    totp:
+      enabled: true
+      issuer: 'Amen Bank'           # Issuer name used in QR code
+      window: 1                      # How many codes before/after the current one would be accepted as valid
+      parameters: # Additional parameters added in the QR code
+         image: 'https://cdn.pixabay.com/photo/2015/10/30/10/40/key-1013662__340.jpg'
+      template: security/2fa_form.html.twig   # Template used to render the authentication form
+

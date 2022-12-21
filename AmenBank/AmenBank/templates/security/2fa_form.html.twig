@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('front/images/favicon.png')}}" >
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link href="{{ asset('front/css/style.css')}}" rel="stylesheet">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}}">
+
+
+</head>
+
+<body class="h-100">
+
+<!--*******************
+    Preloader start
+********************-->
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+        </svg>
+    </div>
+</div>
+<!--*******************
+    Preloader end
+********************-->
+
+
+
+
+<div class="login-form-bg h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-xl-6">
+                <div class="form-input-content">
+                    <div class="card login-form mb-0">
+                        <div class="card-body pt-5">
+                            <a class="text-center" href=""> <h1>Amen Bank</h1></a>
+                            <br>
+
+                            {% block body %}
+                                        <div class="login-form  mt-4 p-4">
+                                            <p>
+                                                Open your Authenticator app and type in the number.
+                                            </p>
+
+                                            {% if authenticationError %}
+                                                <div class="alert alert-danger">{{ authenticationError|trans(authenticationErrorData, 'SchebTwoFactorBundle') }}</div>
+                                            {% endif %}
+
+                                            <form class="form" action="{{ checkPathUrl ? checkPathUrl: path(checkPathRoute) }}" method="post">
+                                                <p class="widget">
+                                                    <input
+                                                            id="_auth_code"
+                                                            type="text"
+                                                            name="{{ authCodeParameterName }}"
+                                                            autocomplete="one-time-code"
+                                                            class="form-control"
+                                                            autofocus
+                                                            {#
+                                                            https://www.twilio.com/blog/html-attributes-two-factor-authentication-autocomplete
+                                                            If your 2fa methods are using numeric codes only, add these attributes for better user experience:
+                                                            inputmode="numeric"
+                                                            pattern="[0-9]*"
+                                                            #}
+                                                    />
+                                                </p>
+
+                                                {% if displayTrustedOption %}
+                                                    <p class="widget"><label for="_trusted"><input id="_trusted" type="checkbox" name="{{ trustedParameterName }}" /> {{ "trusted"|trans({}, 'SchebTwoFactorBundle') }}</label></p>
+                                                {% endif %}
+                                                {% if isCsrfProtectionEnabled %}
+                                                    <input type="hidden" name="{{ csrfParameterName }}" value="{{ csrf_token(csrfTokenId) }}">
+                                                {% endif %}
+                                                <a class="btn btn-link" href="{{ logoutPath }}">{{ "cancel"|trans({}, 'SchebTwoFactorBundle') }}</a>
+                                                <button type="submit" class="btn btn-primary">{{ "login"|trans({}, 'SchebTwoFactorBundle') }}</button>
+                                            </form>
+
+                                        </div>
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--**********  Scripts   ***************-->
+
+<script src="{{ asset('front/plugins/common/common.min.js') }}"></script>
+<script src="{{ asset('front/js/custom.min.js') }}"></script>
+<script src="{{ asset('front/js/settings.js') }}"></script>
+<script src="{{ asset('front/js/gleek.js') }}"></script>
+<script src="{{ asset('front/js/styleSwitcher.js') }}"></script>
+</body>
+</html>
