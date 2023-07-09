@@ -2,7 +2,11 @@ pipeline {
   agent any
   
   stages {
-    
+    stage('Install Composer') {
+  steps {
+    sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer'
+  }
+}   
     stage('Build and Test') {
       steps {
         dir('AmenBank/AmenBank') {
