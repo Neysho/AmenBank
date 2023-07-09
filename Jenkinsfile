@@ -4,12 +4,12 @@ pipeline {
   stages {
     stage('Install PHP and Composer') {
       steps {
-        sh 'sudo apt update'
-        sh 'sudo apt install -y php-cli'
+        sh ' apt update'
+        sh ' apt install -y php-cli'
         sh 'php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
         sh 'php composer-setup.php'
         sh 'php -r "unlink(\'composer-setup.php\');"'
-        sh 'sudo mv composer.phar /usr/local/bin/composer'
+        sh ' mv composer.phar /usr/local/bin/composer'
       }
     }
     stage('Build and Test') {
