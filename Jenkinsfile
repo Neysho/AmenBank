@@ -2,11 +2,16 @@ pipeline {
   agent any
   
   stages {
-    stage('Install Composer') {
-  steps {
-    sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer'
-  }
-}   
+    stage('Install PHP and Composer') {
+      steps {
+        sh 'sudo apt update'
+        sh 'sudo apt install -y php-cli'
+        sh 'php -r "copy(\'https://getcomposer.org/installer\', \'composer-setup.php\');"'
+        sh 'php composer-setup.php'
+        sh 'php -r "unlink(\'composer-setup.php\');"'
+        sh 'sudo mv composer.phar /usr/local/bin/composer'
+      }
+    }
     stage('Build and Test') {
       steps {
         dir('AmenBank/AmenBank') {
