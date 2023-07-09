@@ -2,12 +2,6 @@ pipeline {
   agent any
   
   stages {
-    stage('Checkout') {
-      steps {
-        // Checkout the source code from your Git repository
-        git 'https://github.com/Neysho/AmenBank.git'
-      }
-    }
     
     stage('Build and Test') {
       steps {
